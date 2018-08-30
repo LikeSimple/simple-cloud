@@ -1,0 +1,8 @@
+# node.js
+dist/
+node_modules/
+*.log
+
+# maven
+target/
+.mvn/
