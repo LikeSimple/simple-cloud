@@ -18,6 +18,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
+    <modules>
+        <module>service-security</module>
+    </modules>
     <dependencies>
         <!-- 自动插入代码工具，需要IDE的插件支持-->
         <dependency>

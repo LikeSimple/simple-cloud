@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: http://localhost:3306/simple_cloud
+      username: root
+      password: 123456

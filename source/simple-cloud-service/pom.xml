@@ -76,6 +76,7 @@
     <modules>
         <module>service-eureka</module>
         <module>service-config</module>
+        <module>service-vault</module>
         <module>service-module</module>
         <!--<module>service-visual</module>-->
     </modules>
