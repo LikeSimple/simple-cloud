@@ -76,8 +76,8 @@
     <modules>
         <module>service-eureka</module>
         <module>service-config</module>
-        <module>service-module</module>
-        <!--<module>service-visual</module>-->
+        <module>service-business</module>
+        <module>service-monitor</module>
     </modules>
 
     <dependencyManagement>

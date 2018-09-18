@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.newtouch.cloud.service</groupId>
-    <artifactId>module</artifactId>
+    <artifactId>business</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>module</name>
-    <description>business module</description>
+    <name>business</name>
+    <description>business</description>
 
     <parent>
         <groupId>com.newtouch.cloud</groupId>
@@ -18,7 +18,33 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
+    <modules>
+        <module>service-auth</module>
+        <module>service-gateway</module>
+        <module>service-client</module>
+        <module>service-zuul</module>
+    </modules>
+
     <dependencies>
+
+        <!-- Restful 控制器支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Zipkin 链路跟踪支持 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
+        <!-- RabbitMQ 消息队列支持 -->
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
+        </dependency>
+
         <!-- 自动插入代码工具，需要IDE的插件支持-->
         <dependency>
             <groupId>org.projectlombok</groupId>
