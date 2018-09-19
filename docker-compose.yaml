@@ -1,5 +1,15 @@
 version: '3.7'
 services:
+  zipkin:
+    image: openzipkin/zipkin:2.11.5
+    container_name: simple-cloud-zipkin
+    networks:
+      - net
+    ports:
+      - '9410:9410'
+      - '9411:9411'
+    environment:
+      - 'TZ=${TIME_ZONE}'
   mq:
     image: rabbitmq:3.7.7-management-alpine
     container_name: simple-cloud-mq

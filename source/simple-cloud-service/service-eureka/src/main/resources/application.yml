@@ -1,10 +1,23 @@
+# General Setting
 spring:
   application:
-    name: eureka-server
+    name: service-eureka
+  profiles:
+    active: dev
+# 关闭安全管理
+---
+# Dev Env
+spring:
+  profiles: dev
 
 eureka:
   instance:
-    hostname: eureka-server
+    hostname: service-eureka
   client:
     registerWithEureka: false
     fetchRegistry: false
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+server:
+  port: 9000
