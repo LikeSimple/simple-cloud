@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  application:
+    name: service-zuul
+  cloud:
+    config:
+      profile: ${spring.profiles.active}
+      discovery:
+        enabled: true
+        service-id: SERVICE-CONFIG #注意此处配置服务名称必须大写（与Eureka注册名称一致）
+      label: ${spring.profiles.active}
+      fail-fast: true
+  rabbitmq:
+    username: rabbit
+    password: 123456
+eureka:
+  instance:
+    prefer-ip-address: true
+    #    lease-renewal-interval-in-seconds: 5
+    #    lease-expiration-duration-in-seconds: 20
+    hostname: ${spring.application.name}
+  client:
+    #    registry-fetch-interval-seconds: 10
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+server:
+  port: 9220
+
+---
+zuul:
+  ignoredServices: '*'
+  routes:
+    api-v1:
+      path: /api/v1/**
+      serviceId: service-client

@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>client</name>
-    <description>client module</description>
+    <description>client service</description>
 
     <parent>
         <groupId>com.newtouch.cloud.service</groupId>
@@ -17,6 +17,12 @@
         <version>0.0.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
+
+    <properties>
+        <mybatis.generator.jdbcURL>jdbc:mysql://localhost:3306/simple_cloud?characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false</mybatis.generator.jdbcURL>
+        <mybatis.generator.jdbcUserId>root@localhost</mybatis.generator.jdbcUserId>
+        <mybatis.generator.jdbcPassword>123456</mybatis.generator.jdbcPassword>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -31,19 +37,26 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <configuration>
+                    <repository>${docker-image.repository.prefix}/${project.artifactId}</repository>
+                    <tag>${project.version}</tag>
+                    <buildArgs>
+                        <PROJECT_NAME>${project.artifactId}</PROJECT_NAME>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
