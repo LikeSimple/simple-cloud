@@ -19,14 +19,18 @@
     </parent>
 
     <modules>
+        <module>service-turbine</module>
+        <module>service-turbine-ui</module>
     </modules>
 
     <dependencies>
+
         <!-- Eureka 注册支持 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>

@@ -29,12 +29,29 @@ eureka:
     service-url:
       defaultZone: http://localhost:9000/eureka/
 server:
-  port: 9220
+  port: 9110
 
 ---
 zuul:
-  ignoredServices: '*'
+#  ignoredServices: '*'
   routes:
     api-v1:
       path: /api/v1/**
       serviceId: service-client
+  host:
+    connect-timeout-millis: 5000
+    socket-timeout-millis: 60000
+endpoints:
+  routes:
+    enabled: false
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+  SocketTimeout: 60000

@@ -11,6 +11,12 @@ services:
     environment:
       - 'TZ=${TIME_ZONE}'
       - 'RABBIT_URI=amqp://rabbit:123456@mq:5672'
+    depends_on:
+      - mq
+    # TODO: Wait mq service is ok
+    # https://github.com/vishnubob/wait-for-it
+    # https://docs.docker.com/compose/startup-order/
+    # command: ["./wait-for-it.sh", "db:5432", "--", "python", "app.py"] 
   mq:
     image: rabbitmq:3.7.7-management-alpine
     container_name: simple-cloud-mq

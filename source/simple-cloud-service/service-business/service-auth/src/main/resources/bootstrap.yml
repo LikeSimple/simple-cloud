@@ -6,7 +6,7 @@ spring:
 spring:
   profiles: dev
   application:
-    name: service-client
+    name: service-auth
   cloud:
     config:
       profile: ${spring.profiles.active}
@@ -26,14 +26,12 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
-#    lease-renewal-interval-in-seconds: 5
-#    lease-expiration-duration-in-seconds: 20
+    #    lease-renewal-interval-in-seconds: 5
+    #    lease-expiration-duration-in-seconds: 20
     hostname: ${spring.application.name}
   client:
-#    registry-fetch-interval-seconds: 10
+    #    registry-fetch-interval-seconds: 10
     service-url:
       defaultZone: http://localhost:9000/eureka/
 server:
   port: 9120
-mybatis:
-  mapper-locations: mapper/*.xml

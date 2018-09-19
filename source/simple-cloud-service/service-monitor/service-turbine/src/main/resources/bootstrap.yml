@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  application:
+    name: service-turbine
+  rabbitmq:
+    username: rabbit
+    password: 123456
+eureka:
+  instance:
+    prefer-ip-address: true
+    #    lease-renewal-interval-in-seconds: 5
+    #    lease-expiration-duration-in-seconds: 20
+    hostname: ${spring.application.name}
+  client:
+    #    registry-fetch-interval-seconds: 10
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+
+server:
+  port: 9020

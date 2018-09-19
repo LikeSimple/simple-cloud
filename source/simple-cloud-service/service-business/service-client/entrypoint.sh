@@ -4,7 +4,7 @@
 RESERVED_MEGABYTES=64
 
 # 虚拟机固定参数
-JAVA_OPTS="-XX:+AggressiveOpts -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Djava.security.egd=file:/dev/./urandom"
+JAVA_OPTS="-XX:+AggressiveOpts -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Djava.auth.egd=file:/dev/./urandom"
 
 # 检测容器内存限制值
 LIMIT_IN_BYTES=$(cat /sys/fs/cgroup/memory/memory.limit_in_bytes)
