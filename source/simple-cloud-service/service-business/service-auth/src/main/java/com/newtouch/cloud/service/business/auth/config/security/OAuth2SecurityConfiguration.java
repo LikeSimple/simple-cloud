@@ -1,4 +1,4 @@
-package com.newtouch.cloud.service.module.auth.config.security;
+package com.newtouch.cloud.service.business.auth.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

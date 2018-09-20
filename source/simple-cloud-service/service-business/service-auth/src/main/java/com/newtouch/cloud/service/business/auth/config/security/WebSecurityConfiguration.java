@@ -1,4 +1,4 @@
-package com.newtouch.cloud.service.module.auth.config.security;
+package com.newtouch.cloud.service.business.auth.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.newtouch.cloud.service.module.auth;
+package com.newtouch.cloud.service.business.auth;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
