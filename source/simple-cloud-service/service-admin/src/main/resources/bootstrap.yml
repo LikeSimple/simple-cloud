@@ -6,7 +6,14 @@ spring:
 spring:
   profiles: dev
   application:
-    name: service-turbine
+    name: service-admin
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/LikeSimple/spring-cloud-config #default Config Server Uri
+          search-paths: repos
+      label: ${spring.profiles.active}
   rabbitmq:
     username: rabbit
     password: 123456
@@ -17,12 +24,11 @@ eureka:
     #    lease-expiration-duration-in-seconds: 20
     hostname: ${spring.application.name}
   client:
-    #    registry-fetch-interval-seconds: 10
     service-url:
       defaultZone: http://localhost:9000/eureka/
-
+#    registry-fetch-interval-seconds: 10
 server:
-  port: 9020
+  port: 9040
 management:
   endpoints:
     web:

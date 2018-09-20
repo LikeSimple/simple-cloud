@@ -20,3 +20,11 @@ eureka:
 
 server:
   port: 9030
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

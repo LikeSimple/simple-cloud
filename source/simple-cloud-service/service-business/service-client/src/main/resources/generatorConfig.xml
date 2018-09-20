@@ -4,7 +4,8 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <classPathEntry location="./dbDriver/mysql-connector-java-5.1.34.jar"/>
+    <classPathEntry
+            location="/Users/xuzhen/.m2/repository/mysql/mysql-connector-java/5.1.47mysql-connector-java-5.1.47.jar"/>
 
     <context id="MysqlTables" targetRuntime="MyBatis3">
         <plugin type="com.softwareloop.mybatis.generator.plugins.LombokPlugin"/>
@@ -23,19 +24,19 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.eastdaybar.gameman.persistence.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.newtouch.cloud.service.module" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.eastdaybar.gameman.persistence.mapper" targetProject="src/main/resources">
-            <property name="enableSubPackages" value="false"/>
-        </sqlMapGenerator>
+        <!--<sqlMapGenerator targetPackage="com.eastdaybar.gameman.persistence.mapper" targetProject="src/main/resources">-->
+        <!--<property name="enableSubPackages" value="false"/>-->
+        <!--</sqlMapGenerator>-->
 
-        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.eastdaybar.gameman.persistence.mapper"
-        targetProject="src/main/java">
-            <property name="enableSubPackages" value="false"/>
-        </javaClientGenerator>
+        <!--<javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.eastdaybar.gameman.persistence.mapper"-->
+        <!--targetProject="src/main/java">-->
+        <!--<property name="enableSubPackages" value="false"/>-->
+        <!--</javaClientGenerator>-->
 
         <table tableName="user_game_dynamic" domainObjectName="UserGameDynamic"
                enableInsert="true" enableSelectByPrimaryKey="true" enableSelectByExample="false"

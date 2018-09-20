@@ -1,5 +1,15 @@
 version: '3.7'
 services:
+  sonarqube:
+    image: sonarqube:7.1-alpine
+    container_name: simple-cloud-sonarqube
+    networks:
+      - net
+    ports:
+      - '9000:9000'
+      - '9092:9092'
+    environment:
+      - 'TZ=${TIME_ZONE}'
   zipkin:
     image: openzipkin/zipkin:2.11.5
     container_name: simple-cloud-zipkin
@@ -52,39 +62,39 @@ services:
       - '6379:6379'
     environment:
       - 'TZ=${TIME_ZONE}'
-  gitlab:
-    image: 'gitlab/gitlab-ce:11.2.3-ce.0'
-    container_name: simple-cloud-cvs
-    networks:
-      - net
-    ports:
-      - '8081:80'
-      - '8443:443'
-      - '822:22'
-    volumes:
-      - 'gitlab-config:/etc/gitlab'
-      - 'gitlab-logs:/var/log/gitlab'
-      - 'gitlab-data:/var/opt/gitlab'
-    environment:
-      - 'TZ=${TIME_ZONE}'
-  jenkins:
-    image: 'jenkins/jenkins:2.140-alpine'
-    container_name: simple-cloud-jenkins
-    networks:
-      - net
-    ports:
-      - '8082:8080'
-      - '50000:50000'
-    volumes:
-      - 'jenkins-data:/var/jenkins_home'
-    environment:
-      - 'TZ=${TIME_ZONE}'
+  # gitlab:
+  #   image: 'gitlab/gitlab-ce:11.2.3-ce.0'
+  #   container_name: simple-cloud-cvs
+  #   networks:
+  #     - net
+  #   ports:
+  #     - '8081:80'
+  #     - '8443:443'
+  #     - '822:22'
+  #   volumes:
+  #     - 'gitlab-config:/etc/gitlab'
+  #     - 'gitlab-logs:/var/log/gitlab'
+  #     - 'gitlab-data:/var/opt/gitlab'
+  #   environment:
+  #     - 'TZ=${TIME_ZONE}'
+  # jenkins:
+  #   image: 'jenkins/jenkins:2.140-alpine'
+  #   container_name: simple-cloud-jenkins
+  #   networks:
+  #     - net
+  #   ports:
+  #     - '8082:8080'
+  #     - '50000:50000'
+  #   volumes:
+  #     - 'jenkins-data:/var/jenkins_home'
+  #   environment:
+  #     - 'TZ=${TIME_ZONE}'
 networks:
   net:
     driver: bridge
 volumes:
-  gitlab-config:
-  gitlab-logs:
-  gitlab-data:
-  jenkins-data:
+  # gitlab-config:
+  # gitlab-logs:
+  # gitlab-data:
+  # jenkins-data:
   percona-data:

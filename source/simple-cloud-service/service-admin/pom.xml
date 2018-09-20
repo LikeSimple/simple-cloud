@@ -3,41 +3,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.newtouch.cloud.service.business</groupId>
-    <artifactId>auth</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <groupId>com.newtouch.cloud.service</groupId>
+    <artifactId>admin</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>auth</name>
-    <description>providing authorization services</description>
+    <name>admin</name>
+    <description>admin console of simple cloud</description>
 
     <parent>
-        <groupId>com.newtouch.cloud.service</groupId>
-        <artifactId>business</artifactId>
+        <groupId>com.newtouch.cloud</groupId>
+        <artifactId>service</artifactId>
         <version>0.0.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <dependencies>
-        <!-- OAUTH2.0服务支持 -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-oauth2</artifactId>
-        </dependency>
-        <!-- Spring Config 配置加密服务支持 -->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.cloud</groupId>-->
-        <!--<artifactId>spring-cloud-starter-vault-config</artifactId>-->
-        <!--</dependency>-->
-        <!-- Jdbc 支持 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-        <!-- MySQL数据库支持 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
 
