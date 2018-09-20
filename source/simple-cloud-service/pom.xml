@@ -59,13 +59,6 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Springboot 程序热部署支持 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
-
         <!-- JMX Beans 支持 -->
         <dependency>
             <groupId>org.jolokia</groupId>
@@ -79,7 +72,6 @@
         <module>service-config</module>
         <module>service-business</module>
         <module>service-monitor</module>
-        <module>service-admin</module>
     </modules>
 
     <dependencyManagement>
@@ -109,16 +101,6 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>1.3.2</version>
-            </dependency>
-            <dependency>
-                <groupId>tk.mybatis</groupId>
-                <artifactId>mapper-spring-boot-starter</artifactId>
-                <version>2.0.4</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper-spring-boot-starter</artifactId>
-                <version>1.2.7</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

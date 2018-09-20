@@ -45,3 +45,9 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+mapper:
+  identity: MYSQL
+  not-empty: false
+  mappers: tk.mybatis.mapper.common.Mapper
+pagehelper:
+  dialect: mysql

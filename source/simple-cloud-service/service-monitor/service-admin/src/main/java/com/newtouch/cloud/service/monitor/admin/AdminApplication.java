@@ -1,4 +1,4 @@
-package com.newtouch.cloud.service.admin;
+package com.newtouch.cloud.service.monitor.admin;
 
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;

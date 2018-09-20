@@ -21,6 +21,7 @@
     <modules>
         <module>service-turbine</module>
         <module>service-turbine-ui</module>
+        <module>service-admin</module>
     </modules>
 
     <dependencies>
