@@ -15,7 +15,7 @@
         <groupId>com.newtouch.cloud.service</groupId>
         <artifactId>monitor</artifactId>
         <version>0.0.2-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <dependencies>

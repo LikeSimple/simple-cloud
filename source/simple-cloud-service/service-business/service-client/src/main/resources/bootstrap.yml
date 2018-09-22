@@ -32,9 +32,9 @@ eureka:
   client:
     #    registry-fetch-interval-seconds: 10
     service-url:
-      defaultZone: http://localhost:9000/eureka/
+      defaultZone: http://localhost:9500/eureka/
 server:
-  port: 9120
+  port: 9620
 mybatis:
   mapper-locations: mapper/*.xml
 management:
@@ -51,3 +51,6 @@ mapper:
   mappers: tk.mybatis.mapper.common.Mapper
 pagehelper:
   dialect: mysql
+swagger:
+  exclude-path: /error, /actuator/**
+  enabled: true

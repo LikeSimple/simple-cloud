@@ -32,9 +32,9 @@ eureka:
   client:
     #    registry-fetch-interval-seconds: 10
     service-url:
-      defaultZone: http://localhost:9000/eureka/
+      defaultZone: http://localhost:9500/eureka/
 server:
-  port: 9130
+  port: 9630
 management:
   endpoints:
     web:

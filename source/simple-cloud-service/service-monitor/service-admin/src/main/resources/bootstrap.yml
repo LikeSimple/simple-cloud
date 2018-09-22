@@ -17,6 +17,9 @@ spring:
   rabbitmq:
     username: rabbit
     password: 123456
+  boot:
+    admin:
+      context-path: /admin
 eureka:
   instance:
     prefer-ip-address: true
@@ -25,10 +28,10 @@ eureka:
     hostname: ${spring.application.name}
   client:
     service-url:
-      defaultZone: http://localhost:9000/eureka/
+      defaultZone: http://localhost:9500/eureka/
 #    registry-fetch-interval-seconds: 10
 server:
-  port: 9040
+  port: 9540
 management:
   endpoints:
     web:

@@ -13,18 +13,26 @@ eureka:
     #    lease-renewal-interval-in-seconds: 5
     #    lease-expiration-duration-in-seconds: 20
     hostname: ${spring.application.name}
+    metadata-map:
+      management.context-path: ${management.server.servlet.context-path}${management.endpoints.web.base-path}
   client:
     #    registry-fetch-interval-seconds: 10
     service-url:
-      defaultZone: http://localhost:9000/eureka/
+      defaultZone: http://localhost:9500/eureka/
 
 server:
-  port: 9030
+  port: 9530
+  servlet:
+    context-path: /turbine
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+      base-path: /actuator
   endpoint:
     health:
       show-details: ALWAYS
+  server:
+    servlet:
+      context-path: ${server.servlet.context-path}

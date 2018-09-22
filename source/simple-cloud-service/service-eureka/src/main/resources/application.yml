@@ -19,7 +19,7 @@ eureka:
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 15000
 server:
-  port: 9000
+  port: 9500
 management:
   endpoints:
     web:
