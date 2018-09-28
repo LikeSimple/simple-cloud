@@ -1,4 +1,4 @@
-package com.newtouch.cloud.service.business.auth.config.security;
+package com.newtouch.cloud.service.business.auth.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,15 +17,22 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
+import javax.sql.DataSource;
+
 @Configuration
 @EnableAuthorizationServer
 public class OAuth2SecurityConfiguration extends AuthorizationServerConfigurerAdapter {
 
     private AuthenticationManager authenticationManager;
 
+    private DataSource dataSource;
+
     @Autowired
-    public OAuth2SecurityConfiguration(@Qualifier("authenticationManagerBean") AuthenticationManager authenticationManager) {
+    public OAuth2SecurityConfiguration(
+            @Qualifier("authenticationManagerBean") AuthenticationManager authenticationManager,
+            DataSource dataSource) {
         this.authenticationManager = authenticationManager;
+        this.dataSource = dataSource;
     }
 
     @Bean
@@ -49,13 +56,14 @@ public class OAuth2SecurityConfiguration extends AuthorizationServerConfigurerAd
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
-        clients.inMemory()
-                .withClient("web_app")
-                .secret("web_secret")
-                .scopes("FOO")
-                .autoApprove(true)
-                .authorities("FOO_READ", "FOO_WRITE")
-                .authorizedGrantTypes("implicit", "refresh_token", "password", "authorization_code");
+        clients.jdbc(dataSource).passwordEncoder(NoOpPasswordEncoder.getInstance());
+//        clients.inMemory()
+//                .withClient("web_app")
+//                .secret("web_secret")
+//                .scopes("FOO")
+//                .autoApprove(true)
+//                .authorities("FOO_READ", "FOO_WRITE")
+//                .authorizedGrantTypes("implicit", "refresh_token", "password", "authorization_code");
 
     }
 
