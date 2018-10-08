@@ -27,7 +27,7 @@
 
     <modules>
         <module>service-auth</module>
-        <module>service-client</module>
+        <module>service-user</module>
         <module>service-zuul</module>
     </modules>
 

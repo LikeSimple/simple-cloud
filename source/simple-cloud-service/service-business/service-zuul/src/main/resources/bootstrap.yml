@@ -36,8 +36,8 @@ zuul:
   ignoredServices: '*' # 关闭Zuul自动路由功能（否则会针对Eureka Server中注册的服务自动生成路由）
   routes:
     api:
-      path: /v1/api/client/**
-      serviceId: service-client
+      path: /v1/api/user/**
+      serviceId: service-user
     admin:
       path: /admin/**
       serviceId: service-admin

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newtouch.cloud.service.business.user.mapper.UserPositionMapper">
+  <resultMap id="BaseResultMap" type="com.newtouch.cloud.service.business.user.model.UserPosition">
+    <id column="user_id" jdbcType="CHAR" property="userId" />
+    <id column="position_id" jdbcType="CHAR" property="positionId" />
+  </resultMap>
+  <insert id="insertSelective" parameterType="com.newtouch.cloud.service.business.user.model.UserPosition">
+    insert into user_position
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="positionId != null">
+        position_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="positionId != null">
+        #{positionId,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

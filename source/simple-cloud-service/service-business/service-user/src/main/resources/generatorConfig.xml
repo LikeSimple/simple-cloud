@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="MysqlTables" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <plugin type="com.softwareloop.mybatis.generator.plugins.LombokPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="${mybatis.generator.jdbcDriver}"
+                        connectionURL="${mybatis.generator.jdbcURL}"
+                        userId="${mybatis.generator.jdbcUserId}"
+                        password="${mybatis.generator.jdbcPassword}">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.newtouch.cloud.service.business.user.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.newtouch.cloud.service.business.user.mapper"
+                             targetProject="src/main/java"
+                             type="MIXEDMAPPER"/>
+
+        <!--<table tableName="authority"-->
+               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--modelType="flat">-->
+            <!--<property name="selectAllOrderByClause" value="name"/>-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+        <!--</table>-->
+
+        <!--<table tableName="corporation"-->
+               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--modelType="flat">-->
+            <!--<property name="selectAllOrderByClause" value="name"/>-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+        <!--</table>-->
+
+        <!--<table tableName="department"-->
+               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--modelType="flat">-->
+            <!--<property name="selectAllOrderByClause" value="name"/>-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+        <!--</table>-->
+
+        <!--<table tableName="group"-->
+               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--modelType="flat">-->
+            <!--<property name="selectAllOrderByClause" value="name"/>-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+        <!--</table>-->
+
+        <!--<table tableName="group_authority"-->
+               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--modelType="flat">-->
+            <!--<property name="selectAllOrderByClause" value="group_id, authority_id"/>-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+        <!--</table>-->
+
+        <!--<table tableName="position"-->
+               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--modelType="flat">-->
+            <!--<property name="selectAllOrderByClause" value="id"/>-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+        <!--</table>-->
+
+        <!--<table tableName="user"-->
+               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--modelType="flat">-->
+            <!--<property name="selectAllOrderByClause" value="create_time desc"/>-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+        <!--</table>-->
+
+        <!--<table tableName="user_group"-->
+               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--modelType="flat">-->
+            <!--<property name="selectAllOrderByClause" value="user_id, group_id"/>-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+        <!--</table>-->
+
+        <!--<table tableName="user_position"-->
+               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+               <!--modelType="flat">-->
+            <!--<property name="selectAllOrderByClause" value="position_id, user_id"/>-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+        <!--</table>-->
+        <!--<table tableName="user_profile"-->
+            <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+            <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
+            <!--modelType="flat">-->
+            <!--<property name="useActualColumnNames" value="false" />-->
+        <!--</table>-->
+        <table tableName="oauth_client_details"
+            enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+            enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+            modelType="flat">
+            <property name="useActualColumnNames" value="false" />
+        </table>
+    </context>
+
+</generatorConfiguration>

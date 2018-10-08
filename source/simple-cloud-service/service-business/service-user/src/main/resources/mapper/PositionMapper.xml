@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newtouch.cloud.service.business.user.mapper.PositionMapper">
+  <resultMap id="BaseResultMap" type="com.newtouch.cloud.service.business.user.model.Position">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="department_id" jdbcType="CHAR" property="departmentId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="node_level" jdbcType="CHAR" property="nodeLevel" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, department_id, name, node_level, create_time, update_time
+  </sql>
+  <insert id="insertSelective" parameterType="com.newtouch.cloud.service.business.user.model.Position">
+    insert into position
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="departmentId != null">
+        department_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="nodeLevel != null">
+        node_level,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="departmentId != null">
+        #{departmentId,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeLevel != null">
+        #{nodeLevel,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.newtouch.cloud.service.business.user.model.Position">
+    update position
+    <set>
+      <if test="departmentId != null">
+        department_id = #{departmentId,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeLevel != null">
+        node_level = #{nodeLevel,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>
