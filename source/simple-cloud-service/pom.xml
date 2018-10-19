@@ -71,18 +71,13 @@
         <module>service-eureka</module>
         <module>service-config</module>
         <module>service-business</module>
-        <module>service-monitor</module>
+        <module>service-ops</module>
+        <module>service-common</module>
+
     </modules>
 
     <dependencyManagement>
         <dependencies>
-            <!--<dependency>-->
-            <!--<groupId>io.spring.platform</groupId>-->
-            <!--<artifactId>platform-bom</artifactId>-->
-            <!--<version>Brussels-SR11</version>-->
-            <!--<type>pom</type>-->
-            <!--<scope>import</scope>-->
-            <!--</dependency>-->
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-dependencies</artifactId>
@@ -107,6 +102,11 @@
                 <artifactId>mybatis-spring-boot-starter-test</artifactId>
                 <version>1.3.2</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>2.3.3.RELEASE</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -127,28 +127,26 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>build-info</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <!-- 远程调试支持 -->
+                    <!--<configuration>-->
+                    <!--<fork>true</fork>-->
+                    <!--<jvmArguments>-->
+                    <!-- -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005-->
+                    <!--</jvmArguments>-->
+                    <!--</configuration>-->
+                </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>build-info</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <!-- 远程调试支持 -->
-                <!--<configuration>-->
-                <!--<fork>true</fork>-->
-                <!--<jvmArguments>-->
-                <!-- -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005-->
-                <!--</jvmArguments>-->
-                <!--</configuration>-->
-            </plugin>
-        </plugins>
     </build>
 
 </project>

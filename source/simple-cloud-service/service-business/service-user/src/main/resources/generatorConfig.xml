@@ -23,7 +23,8 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.newtouch.cloud.service.business.user.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.newtouch.cloud.service.business.user.model"
+                            targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -37,88 +38,13 @@
                              targetProject="src/main/java"
                              type="MIXEDMAPPER"/>
 
-        <!--<table tableName="authority"-->
-               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
-               <!--modelType="flat">-->
-            <!--<property name="selectAllOrderByClause" value="name"/>-->
-            <!--<property name="useActualColumnNames" value="false" />-->
-        <!--</table>-->
-
-        <!--<table tableName="corporation"-->
-               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
-               <!--modelType="flat">-->
-            <!--<property name="selectAllOrderByClause" value="name"/>-->
-            <!--<property name="useActualColumnNames" value="false" />-->
-        <!--</table>-->
-
-        <!--<table tableName="department"-->
-               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
-               <!--modelType="flat">-->
-            <!--<property name="selectAllOrderByClause" value="name"/>-->
-            <!--<property name="useActualColumnNames" value="false" />-->
-        <!--</table>-->
-
-        <!--<table tableName="group"-->
-               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
-               <!--modelType="flat">-->
-            <!--<property name="selectAllOrderByClause" value="name"/>-->
-            <!--<property name="useActualColumnNames" value="false" />-->
-        <!--</table>-->
-
-        <!--<table tableName="group_authority"-->
-               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
-               <!--modelType="flat">-->
-            <!--<property name="selectAllOrderByClause" value="group_id, authority_id"/>-->
-            <!--<property name="useActualColumnNames" value="false" />-->
-        <!--</table>-->
-
-        <!--<table tableName="position"-->
-               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
-               <!--modelType="flat">-->
-            <!--<property name="selectAllOrderByClause" value="id"/>-->
-            <!--<property name="useActualColumnNames" value="false" />-->
-        <!--</table>-->
-
-        <!--<table tableName="user"-->
-               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
-               <!--modelType="flat">-->
-            <!--<property name="selectAllOrderByClause" value="create_time desc"/>-->
-            <!--<property name="useActualColumnNames" value="false" />-->
-        <!--</table>-->
-
-        <!--<table tableName="user_group"-->
-               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
-               <!--modelType="flat">-->
-            <!--<property name="selectAllOrderByClause" value="user_id, group_id"/>-->
-            <!--<property name="useActualColumnNames" value="false" />-->
-        <!--</table>-->
-
-        <!--<table tableName="user_position"-->
-               <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
-               <!--modelType="flat">-->
-            <!--<property name="selectAllOrderByClause" value="position_id, user_id"/>-->
-            <!--<property name="useActualColumnNames" value="false" />-->
-        <!--</table>-->
-        <!--<table tableName="user_profile"-->
-            <!--enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-            <!--enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"-->
-            <!--modelType="flat">-->
-            <!--<property name="useActualColumnNames" value="false" />-->
-        <!--</table>-->
         <table tableName="oauth_client_details"
-            enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
-            enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
-            modelType="flat">
-            <property name="useActualColumnNames" value="false" />
+               enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"
+               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false"
+               modelType="flat">
+            <property name="useActualColumnNames" value="false"/>
         </table>
     </context>
 

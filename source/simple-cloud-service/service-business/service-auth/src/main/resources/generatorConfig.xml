@@ -23,7 +23,8 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.newtouch.cloud.service.business.auth.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.newtouch.cloud.service.business.auth.model"
+                            targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -38,11 +39,13 @@
                              type="MIXEDMAPPER"/>
 
         <table tableName="user_details" domainObjectName="UserDetails"
-               enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
-               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
+               enableInsert="true" enableDeleteByPrimaryKey="true" enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"
+               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false"
                modelType="flat">
             <property name="selectAllOrderByClause" value="client_id"/>
-            <property name="useActualColumnNames" value="false" />
+            <property name="useActualColumnNames" value="false"/>
         </table>
     </context>
 </generatorConfiguration>

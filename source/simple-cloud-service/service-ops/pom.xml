@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.newtouch.cloud.service</groupId>
-    <artifactId>monitor</artifactId>
+    <artifactId>ops</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>monitor</name>
-    <description>simple cloud monitor</description>
+    <name>ops</name>
+    <description>simple cloud Ops</description>
 
     <parent>
         <groupId>com.newtouch.cloud</groupId>
@@ -21,7 +21,7 @@
     <modules>
         <module>service-turbine</module>
         <module>service-turbine-ui</module>
-        <module>service-admin</module>
+        <module>service-monitor</module>
     </modules>
 
     <dependencies>

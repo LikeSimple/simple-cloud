@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  application:
+    name: service-client
+  cloud:
+    config:
+      profile: ${spring.profiles.active}
+      discovery:
+        enabled: true
+        service-id: SERVICE-CONFIG #注意此处配置服务名称必须大写（与Eureka注册名称一致）
+      label: ${spring.profiles.active}
+      fail-fast: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/simple_cloud?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    password: 123456 # 生产环境上应使用vault进行配置加密
+    username: root
+  rabbitmq:
+    username: rabbit
+    password: 123456
+eureka:
+  instance:
+    prefer-ip-address: true
+    #    lease-renewal-interval-in-seconds: 5
+    #    lease-expiration-duration-in-seconds: 20
+    hostname: ${spring.application.name}
+  client:
+    #    registry-fetch-interval-seconds: 10
+    service-url:
+      defaultZone: http://localhost:9500/eureka/
+server:
+  port: 9630
+mybatis:
+  mapper-locations: mapper/*.xml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+swagger:
+  exclude-path: /error, /actuator/**
+  enabled: true

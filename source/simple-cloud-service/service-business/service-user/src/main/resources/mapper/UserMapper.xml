@@ -1,110 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.newtouch.cloud.service.business.user.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="com.newtouch.cloud.service.business.user.model.User">
-    <id column="id" jdbcType="CHAR" property="id" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="password" jdbcType="CHAR" property="password" />
-    <result column="locked" jdbcType="BIT" property="locked" />
-    <result column="enabled" jdbcType="BIT" property="enabled" />
-    <result column="account_expire" jdbcType="TIMESTAMP" property="accountExpire" />
-    <result column="credential_expire" jdbcType="TIMESTAMP" property="credentialExpire" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
-  <sql id="Base_Column_List">
+    <resultMap id="BaseResultMap" type="com.newtouch.cloud.service.business.user.model.User">
+        <id column="id" jdbcType="CHAR" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="CHAR" property="password"/>
+        <result column="locked" jdbcType="BIT" property="locked"/>
+        <result column="enabled" jdbcType="BIT" property="enabled"/>
+        <result column="account_expire" jdbcType="TIMESTAMP" property="accountExpire"/>
+        <result column="credential_expire" jdbcType="TIMESTAMP" property="credentialExpire"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
     id, username, password, locked, enabled, account_expire, credential_expire, create_time, 
     update_time
   </sql>
-  <insert id="insertSelective" parameterType="com.newtouch.cloud.service.business.user.model.User">
-    insert into user
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="username != null">
-        username,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="locked != null">
-        locked,
-      </if>
-      <if test="enabled != null">
-        enabled,
-      </if>
-      <if test="accountExpire != null">
-        account_expire,
-      </if>
-      <if test="credentialExpire != null">
-        credential_expire,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=CHAR},
-      </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=CHAR},
-      </if>
-      <if test="locked != null">
-        #{locked,jdbcType=BIT},
-      </if>
-      <if test="enabled != null">
-        #{enabled,jdbcType=BIT},
-      </if>
-      <if test="accountExpire != null">
-        #{accountExpire,jdbcType=TIMESTAMP},
-      </if>
-      <if test="credentialExpire != null">
-        #{credentialExpire,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.newtouch.cloud.service.business.user.model.User">
-    update user
-    <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        password = #{password,jdbcType=CHAR},
-      </if>
-      <if test="locked != null">
-        locked = #{locked,jdbcType=BIT},
-      </if>
-      <if test="enabled != null">
-        enabled = #{enabled,jdbcType=BIT},
-      </if>
-      <if test="accountExpire != null">
-        account_expire = #{accountExpire,jdbcType=TIMESTAMP},
-      </if>
-      <if test="credentialExpire != null">
-        credential_expire = #{credentialExpire,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=CHAR}
-  </update>
+    <insert id="insertSelective" parameterType="com.newtouch.cloud.service.business.user.model.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="locked != null">
+                locked,
+            </if>
+            <if test="enabled != null">
+                enabled,
+            </if>
+            <if test="accountExpire != null">
+                account_expire,
+            </if>
+            <if test="credentialExpire != null">
+                credential_expire,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=CHAR},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=CHAR},
+            </if>
+            <if test="locked != null">
+                #{locked,jdbcType=BIT},
+            </if>
+            <if test="enabled != null">
+                #{enabled,jdbcType=BIT},
+            </if>
+            <if test="accountExpire != null">
+                #{accountExpire,jdbcType=TIMESTAMP},
+            </if>
+            <if test="credentialExpire != null">
+                #{credentialExpire,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.newtouch.cloud.service.business.user.model.User">
+        update user
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=CHAR},
+            </if>
+            <if test="locked != null">
+                locked = #{locked,jdbcType=BIT},
+            </if>
+            <if test="enabled != null">
+                enabled = #{enabled,jdbcType=BIT},
+            </if>
+            <if test="accountExpire != null">
+                account_expire = #{accountExpire,jdbcType=TIMESTAMP},
+            </if>
+            <if test="credentialExpire != null">
+                credential_expire = #{credentialExpire,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=CHAR}
+    </update>
 </mapper>

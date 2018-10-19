@@ -27,4 +27,5 @@ public class UserApplicationTests {
 
         this.mvc.perform(get("/name")).andExpect(status().isOk())
                 .andExpect(content().string("Just for test."));
-    }}
+    }
+}

@@ -9,15 +9,15 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface UserGroupMapper {
     @Delete({
-        "delete from user_group",
-        "where user_id = #{userId,jdbcType=CHAR}",
-          "and group_id = #{groupId,jdbcType=CHAR}"
+            "delete from user_group",
+            "where user_id = #{userId,jdbcType=CHAR}",
+            "and group_id = #{groupId,jdbcType=CHAR}"
     })
     int deleteByPrimaryKey(@Param("userId") String userId, @Param("groupId") String groupId);
 
     @Insert({
-        "insert into user_group (user_id, group_id)",
-        "values (#{userId,jdbcType=CHAR}, #{groupId,jdbcType=CHAR})"
+            "insert into user_group (user_id, group_id)",
+            "values (#{userId,jdbcType=CHAR}, #{groupId,jdbcType=CHAR})"
     })
     int insert(UserGroup record);
 

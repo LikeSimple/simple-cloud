@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class DataLayerTests {
 
     @Test
-    public void sampleTest() {}
+    public void sampleTest() {
+    }
 
 }
